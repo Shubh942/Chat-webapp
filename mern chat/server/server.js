@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/chat", chatRoutes);
+app.use("/api/v1/message", messageRoutes);
 
 app.use(errorMiddleware.notFound);
 app.use(errorMiddleware.errorHandler);

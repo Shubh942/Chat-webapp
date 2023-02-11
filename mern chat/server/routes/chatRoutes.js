@@ -10,8 +10,8 @@ router
   .route("/group")
   .post(authMiddleware.protect, chatController.createGroupChat);
 router.route("/rename").put(authMiddleware.protect, chatController.renameGroup);
-// router
-//   .route("/groupadd")
-//   .put(authMiddleware.protect, chatController.addToGroup);
+router
+  .route("/groupadd")
+  .put(authMiddleware.protect, chatController.addToGroup);
 
 module.exports = router;
